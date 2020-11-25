@@ -1,0 +1,41 @@
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Direction</th>
+                <th scope="col">Country</th>
+                <th scope="col">Postal Code</th>
+                <th scope="col">Studies</th>
+                <th scope="col">Ocupation</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listPerson.data | paginate: { itemsPerPage: 5, currentPage: p }">
+                  <td>{{ i.name }}</td>
+                  <td>{{ i.last_name }}</td>
+                  <td>{{ i.direction }}</td>
+                  <td>{{ i.country }}</td>
+                  <td>{{ i.postal_code }}</td>
+                  <td>{{ i.studies }}</td>
+                  <td>{{ i.ocupation }}</td>
+                  <td>
+                      <button type="button" class="btn btn-primary btn-small mr-1"  (click)="update(i.id)" >Update</button>
+                      <button type="button" class="btn btn-danger btn-small" (click)="delete(i.id)" >Delete</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+         
+    </div>
+    <div class="controller">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+
+
+
+

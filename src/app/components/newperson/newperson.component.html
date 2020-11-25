@@ -1,0 +1,40 @@
+<div class="formulario">
+    <form (submit)="newPerson( person )" #person="ngForm">
+        <div class="form-group">
+          <label >Name</label>
+          <input [(ngModel)]="persons.name" name="name" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label >Last Name</label>
+          <input name="last_name" [(ngModel)]="persons.last_name" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label >Direction</label>
+            <input name="direction" [(ngModel)]="persons.direction"  type="text" class="form-control" >
+       </div>
+       <div class="form-group">
+        <label for="exampleFormControlSelect1">Country</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="country" [(ngModel)]="persons.country" >
+          <option disabled selected value="">Select your Country...</option>
+          <option value="Nicaragua">Nicaragua</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Colombia">Colombia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label >Postal Code</label>
+        <input name="postalcode" [(ngModel)]="persons.postal_code"  type="number" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label >Studies</label>
+        <input name="studies" [(ngModel)]="persons.studies"  type="text" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label >Ocupation</label>
+        <input name="ocupation" [(ngModel)]="persons.ocupation" type="text" class="form-control" >
+    </div>
+    <button *ngIf="isUpdated == 'save'" type="submit" class="btn btn-primary">Save</button>
+    <button *ngIf="isUpdated != 'save'" type="submit" class="btn btn-primary">Update</button>
+      </form>
+</div>

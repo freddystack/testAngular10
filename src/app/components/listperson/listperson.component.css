@@ -1,0 +1,10 @@
+.row{
+    background: rgb(255, 255, 255);
+}
+.controller{
+    display: flex;
+    font-weight: 500;
+    flex-direction: row;
+    justify-content: center;
+   margin-top: 10px;
+}
